@@ -13,6 +13,9 @@
 		CCB676C526E209D60008A3BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCB676C326E209D60008A3BA /* Main.storyboard */; };
 		CCB676C726E209D70008A3BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCB676C626E209D70008A3BA /* Assets.xcassets */; };
 		CCB676CA26E209D70008A3BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCB676C826E209D70008A3BA /* LaunchScreen.storyboard */; };
+		CCB676D426E20AB00008A3BA /* FilterStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB676D326E20AB00008A3BA /* FilterStrategy.swift */; };
+		CCB676D926E20AD00008A3BA /* Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB676D826E20AD00008A3BA /* Phone.swift */; };
+		CCB676DC26E214150008A3BA /* Specification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB676DB26E214150008A3BA /* Specification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		CCB676C626E209D70008A3BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCB676C926E209D70008A3BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCB676CB26E209D70008A3BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCB676D326E20AB00008A3BA /* FilterStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStrategy.swift; sourceTree = "<group>"; };
+		CCB676D826E20AD00008A3BA /* Phone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phone.swift; sourceTree = "<group>"; };
+		CCB676DB26E214150008A3BA /* Specification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,8 @@
 		CCB676BC26E209D60008A3BA /* MultiselectFilter */ = {
 			isa = PBXGroup;
 			children = (
+				CCB676D726E20AC50008A3BA /* Model */,
+				CCB676D226E20A6A0008A3BA /* Filter */,
 				CCB676BD26E209D60008A3BA /* AppDelegate.swift */,
 				CCB676BF26E209D60008A3BA /* SceneDelegate.swift */,
 				CCB676C126E209D60008A3BA /* ViewController.swift */,
@@ -65,6 +73,23 @@
 				CCB676CB26E209D70008A3BA /* Info.plist */,
 			);
 			path = MultiselectFilter;
+			sourceTree = "<group>";
+		};
+		CCB676D226E20A6A0008A3BA /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				CCB676D326E20AB00008A3BA /* FilterStrategy.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		CCB676D726E20AC50008A3BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CCB676D826E20AD00008A3BA /* Phone.swift */,
+				CCB676DB26E214150008A3BA /* Specification.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +162,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCB676D926E20AD00008A3BA /* Phone.swift in Sources */,
+				CCB676D426E20AB00008A3BA /* FilterStrategy.swift in Sources */,
 				CCB676C226E209D60008A3BA /* ViewController.swift in Sources */,
+				CCB676DC26E214150008A3BA /* Specification.swift in Sources */,
 				CCB676BE26E209D60008A3BA /* AppDelegate.swift in Sources */,
 				CCB676C026E209D60008A3BA /* SceneDelegate.swift in Sources */,
 			);
