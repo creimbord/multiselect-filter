@@ -140,7 +140,7 @@ final class DiskSpaceFilter: FilterStrategy {
 final class ColorFilter: FilterStrategy {
     func filter(phones: [Phone], by specs: [Specification]) -> [Phone] {
         let colorSpecs = specs.compactMap { (spec) -> String? in
-            if case let .model(name) = spec { return name }; return nil
+            if case let .color(name) = spec { return name }; return nil
         }
         var filteredPhones = [Phone]()
         
