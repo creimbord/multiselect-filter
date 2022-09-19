@@ -31,125 +31,69 @@ protocol FilterStrategy {
 // MARK: - ModelFilter
 final class ModelFilter: FilterStrategy {
     func filter(phones: [Phone], by specs: [Specification]) -> [Phone] {
-        let modelSpecs = specs.compactMap { (spec) -> String? in
+        let modelSpecs = Set(specs.compactMap { (spec) -> String? in
             if case let .model(name) = spec { return name }; return nil
-        }
-        var filteredPhones = [Phone]()
-        
-        modelSpecs.forEach { (model) in
-            filteredPhones += phones.filter { (phone) -> Bool in
-                return phone.model == model
-            }
-        }
-        
-        return filteredPhones
+        })
+        return phones.filter { modelSpecs.contains($0.model) }
     }
 }
 
 // MARK: - PriceFilter
 final class PriceFilter: FilterStrategy {
     func filter(phones: [Phone], by specs: [Specification]) -> [Phone] {
-        let priceSpecs = specs.compactMap { (spec) -> Int? in
+        let priceSpecs = Set(specs.compactMap { (spec) -> Int? in
             if case let .price(price) = spec { return price }; return nil
-        }
-        var filteredPhones = [Phone]()
-        
-        priceSpecs.forEach { (price) in
-            filteredPhones += phones.filter { (phone) -> Bool in
-                return phone.price == price
-            }
-        }
-        
-        return filteredPhones
+        })
+        return phones.filter { priceSpecs.contains($0.price) }
     }
 }
 
 // MARK: - ScreenSizeFilter
 final class ScreenSizeFilter: FilterStrategy {
     func filter(phones: [Phone], by specs: [Specification]) -> [Phone] {
-        let screenSizeSpecs = specs.compactMap { (spec) -> Double? in
+        let screenSizeSpecs = Set(specs.compactMap { (spec) -> Double? in
             if case let .screenSize(size) = spec { return size }; return nil
-        }
-        var filteredPhones = [Phone]()
-        
-        screenSizeSpecs.forEach { (screenSize) in
-            filteredPhones += phones.filter { (phone) -> Bool in
-                return phone.screenSize == screenSize
-            }
-        }
-        
-        return filteredPhones
+        })
+        return phones.filter { screenSizeSpecs.contains($0.screenSize) }
     }
 }
 
 // MARK: - ProcessorFilter
 final class ProcessorFilter: FilterStrategy {
     func filter(phones: [Phone], by specs: [Specification]) -> [Phone] {
-        let processorSpecs = specs.compactMap { (spec) -> String? in
+        let processorSpecs = Set(specs.compactMap { (spec) -> String? in
             if case let .processor(name) = spec { return name }; return nil
-        }
-        var filteredPhones = [Phone]()
-        
-        processorSpecs.forEach { (processor) in
-            filteredPhones += phones.filter { (phone) -> Bool in
-                return phone.processor == processor
-            }
-        }
-        
-        return filteredPhones
+        })
+        return phones.filter { processorSpecs.contains($0.processor) }
     }
 }
 
 // MARK: - MemoryFilter
 final class MemoryFilter: FilterStrategy {
     func filter(phones: [Phone], by specs: [Specification]) -> [Phone] {
-        let memorySpecs = specs.compactMap { (spec) -> Int? in
+        let memorySpecs = Set(specs.compactMap { (spec) -> Int? in
             if case let .memory(amount) = spec { return amount }; return nil
-        }
-        var filteredPhones = [Phone]()
-        
-        memorySpecs.forEach { (memory) in
-            filteredPhones += phones.filter { (phone) -> Bool in
-                return phone.memory == memory
-            }
-        }
-        
-        return filteredPhones
+        })
+        return phones.filter { memorySpecs.contains($0.memory) }
     }
 }
 
 // MARK: - DiskSpaceFilter
 final class DiskSpaceFilter: FilterStrategy {
     func filter(phones: [Phone], by specs: [Specification]) -> [Phone] {
-        let diskSpaceSpecs = specs.compactMap { (spec) -> Int? in
+        let diskSpaceSpecs = Set(specs.compactMap { (spec) -> Int? in
             if case let .diskSpace(space) = spec { return space }; return nil
-        }
-        var filteredPhones = [Phone]()
-        
-        diskSpaceSpecs.forEach { (diskSpace) in
-            filteredPhones += phones.filter { (phone) -> Bool in
-                return phone.diskSpace == diskSpace
-            }
-        }
-        
-        return filteredPhones
+        })
+        return phones.filter { diskSpaceSpecs.contains($0.diskSpace) }
     }
 }
 
 // MARK: - ColorFilter
 final class ColorFilter: FilterStrategy {
     func filter(phones: [Phone], by specs: [Specification]) -> [Phone] {
-        let colorSpecs = specs.compactMap { (spec) -> String? in
+        let colorSpecs = Set(specs.compactMap { (spec) -> String? in
             if case let .color(name) = spec { return name }; return nil
-        }
-        var filteredPhones = [Phone]()
-        
-        colorSpecs.forEach { (color) in
-            filteredPhones += phones.filter { (phone) -> Bool in
-                return phone.color == color
-            }
-        }
-        
-        return filteredPhones
+        })
+        return phones.filter { colorSpecs.contains($0.color) }
     }
 }

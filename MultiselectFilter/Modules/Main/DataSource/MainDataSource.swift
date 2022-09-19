@@ -10,7 +10,7 @@ import UIKit
 final class MainDataSource: NSObject {
     
     // MARK: - Properties
-    private let phones = [
+    var phones = [
         Phone(
             model: "iPhone 8",
             price: 499,

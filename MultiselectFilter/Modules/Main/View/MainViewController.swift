@@ -38,6 +38,11 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let phoneModelFilter = PhoneModelFilter(phoneFilter: PhoneBaseFilter())
+        let phoneColorFilter = PhoneColorFilter(phoneFilter: phoneModelFilter)
+        let phoneMemoryFilter = PhoneMemoryFilter(phoneFilter: phoneColorFilter)
+        dataSource.phones = phoneMemoryFilter.filter(phones: dataSource.phones, by: [.model("iPhone 8"), .model("iPhone 13 Pro Max"), .memory(2), .color("Gold"), .memory(8), .color("White")])
+        tableView.reloadData()
     }
 }
 
