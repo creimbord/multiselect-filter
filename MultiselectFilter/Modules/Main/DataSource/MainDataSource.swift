@@ -12,32 +12,41 @@ final class MainDataSource: NSObject {
     // MARK: - Properties
     var phones = [
         Phone(
-            model: "iPhone 8",
-            price: 499,
-            screenSize: 4,
-            processor: "A9",
-            memory: 2,
-            diskSpace: 256,
-            color: "White"
+            model: "iPhone 14",
+            price: 799,
+            screenSize: 6.1,
+            processor: "Apple A15 Bionic",
+            memory: 6,
+            diskSpace: 128,
+            color: "Starlight"
         ),
         Phone(
-            model: "iPhone 12 Pro",
+            model: "iPhone 14 Plus",
+            price: 899,
+            screenSize: 6.7,
+            processor: "Apple A15 Bionic",
+            memory: 6,
+            diskSpace: 256,
+            color: "Starlight"
+        ),
+        Phone(
+            model: "iPhone 14 Pro",
             price: 1299,
-            screenSize: 6,
-            processor: "A13 Bionic",
+            screenSize: 6.1,
+            processor: "Apple A16 Bionic",
             memory: 6,
             diskSpace: 512,
-            color: "Black"
+            color: "Space Black"
         ),
         Phone(
-            model: "iPhone 13 Pro Max",
-            price: 1799,
-            screenSize: 6.5,
-            processor: "A15 Bionic",
-            memory: 8,
+            model: "iPhone 14 Pro Max",
+            price: 1599,
+            screenSize: 6.7,
+            processor: "Apple A16 Bionic",
+            memory: 6,
             diskSpace: 1024,
-            color: "Gold"
-        )        
+            color: "Space Black"
+        )
     ]
 }
 

@@ -11,6 +11,14 @@ final class MainViewController: UIViewController {
     
     // MARK: - Properties
     private let dataSource = MainDataSource()
+    private let specifications: [Specification] = [
+        .diskSpace(256),
+        .diskSpace(512),
+        .color("Starlight"),
+        .color("Space Black"),
+        .price(899),
+        .price(1299)
+    ]
     
     // MARK: - Views
     private lazy var filterButton: UIBarButtonItem = {
@@ -38,10 +46,16 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let phoneModelFilter = PhoneModelFilter(phoneFilter: PhoneBaseFilter())
-        let phoneColorFilter = PhoneColorFilter(phoneFilter: phoneModelFilter)
-        let phoneMemoryFilter = PhoneMemoryFilter(phoneFilter: phoneColorFilter)
-        dataSource.phones = phoneMemoryFilter.filter(phones: dataSource.phones, by: [.model("iPhone 8"), .model("iPhone 13 Pro Max"), .memory(2), .color("Gold"), .memory(8), .color("White")])
+        
+        let phoneColorFilter = PhoneColorFilter(phoneFilter: PhoneBaseFilter())
+        let phoneDiskSpaceFilter = PhoneDiskSpaceFilter(phoneFilter: phoneColorFilter)
+        let phonePriceFilter = PhonePriceFilter(phoneFilter: phoneDiskSpaceFilter)
+        
+        dataSource.phones = phonePriceFilter.filter(
+            phones: dataSource.phones,
+            by: specifications
+        )
+        
         tableView.reloadData()
     }
 }
