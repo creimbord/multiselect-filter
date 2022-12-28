@@ -16,7 +16,6 @@ final class MainViewController: UIViewController {
         .diskSpace(512),
         .color("Starlight"),
         .color("Space Black"),
-        .price(899),
         .price(1299)
     ]
     

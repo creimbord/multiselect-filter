@@ -18,7 +18,7 @@ final class MainDataSource: NSObject {
             processor: "Apple A15 Bionic",
             memory: 6,
             diskSpace: 128,
-            color: "Starlight"
+            color: "Midnight"
         ),
         Phone(
             model: "iPhone 14 Plus",
