@@ -18,7 +18,7 @@ final class Filter {
         self.strategy = strategy
     }
     
-    func applyFilters(to phones: [Phone], withSpecs specs: [Specification]) -> [Phone] {
+    func applyFilter(to phones: [Phone], withSpecs specs: [Specification]) -> [Phone] {
         return strategy.filter(phones: phones, by: specs)
     }
 }

@@ -36,7 +36,7 @@ final class PhoneModelFilter: PhoneFilterDecorator {
     override func filter(phones: [Phone], by specs: [Specification]) -> [Phone] {
         let filter = Filter(strategy: ModelFilter())
         let appliedFilterResult = super.filter(phones: phones, by: specs)
-        let filteredPhones = filter.applyFilters(to: appliedFilterResult, withSpecs: specs)
+        let filteredPhones = filter.applyFilter(to: appliedFilterResult, withSpecs: specs)
         return filteredPhones
     }
 }
@@ -46,7 +46,7 @@ final class PhonePriceFilter: PhoneFilterDecorator {
     override func filter(phones: [Phone], by specs: [Specification]) -> [Phone] {
         let filter = Filter(strategy: PriceFilter())
         let appliedFilterResult = super.filter(phones: phones, by: specs)
-        let filteredPhones = filter.applyFilters(to: appliedFilterResult, withSpecs: specs)
+        let filteredPhones = filter.applyFilter(to: appliedFilterResult, withSpecs: specs)
         return filteredPhones
     }
 }
@@ -56,7 +56,7 @@ final class PhoneScreenSizeFilter: PhoneFilterDecorator {
     override func filter(phones: [Phone], by specs: [Specification]) -> [Phone] {
         let filter = Filter(strategy: ScreenSizeFilter())
         let appliedFilterResult = super.filter(phones: phones, by: specs)
-        let filteredPhones = filter.applyFilters(to: appliedFilterResult, withSpecs: specs)
+        let filteredPhones = filter.applyFilter(to: appliedFilterResult, withSpecs: specs)
         return filteredPhones
     }
 }
@@ -66,7 +66,7 @@ final class PhoneProcessorFilter: PhoneFilterDecorator {
     override func filter(phones: [Phone], by specs: [Specification]) -> [Phone] {
         let filter = Filter(strategy: ProcessorFilter())
         let appliedFilterResult = super.filter(phones: phones, by: specs)
-        let filteredPhones = filter.applyFilters(to: appliedFilterResult, withSpecs: specs)
+        let filteredPhones = filter.applyFilter(to: appliedFilterResult, withSpecs: specs)
         return filteredPhones
     }
 }
@@ -76,7 +76,7 @@ final class PhoneMemoryFilter: PhoneFilterDecorator {
     override func filter(phones: [Phone], by specs: [Specification]) -> [Phone] {
         let filter = Filter(strategy: MemoryFilter())
         let appliedFilterResult = super.filter(phones: phones, by: specs)
-        let filteredPhones = filter.applyFilters(to: appliedFilterResult, withSpecs: specs)
+        let filteredPhones = filter.applyFilter(to: appliedFilterResult, withSpecs: specs)
         return filteredPhones
     }
 }
@@ -86,7 +86,7 @@ final class PhoneDiskSpaceFilter: PhoneFilterDecorator {
     override func filter(phones: [Phone], by specs: [Specification]) -> [Phone] {
         let filter = Filter(strategy: DiskSpaceFilter())
         let appliedFilterResult = super.filter(phones: phones, by: specs)
-        let filteredPhones = filter.applyFilters(to: appliedFilterResult, withSpecs: specs)
+        let filteredPhones = filter.applyFilter(to: appliedFilterResult, withSpecs: specs)
         return filteredPhones
     }
 }
@@ -96,7 +96,7 @@ final class PhoneColorFilter: PhoneFilterDecorator {
     override func filter(phones: [Phone], by specs: [Specification]) -> [Phone] {
         let filter = Filter(strategy: ColorFilter())
         let appliedFilterResult = super.filter(phones: phones, by: specs)
-        let filteredPhones = filter.applyFilters(to: appliedFilterResult, withSpecs: specs)
+        let filteredPhones = filter.applyFilter(to: appliedFilterResult, withSpecs: specs)
         return filteredPhones
     }
 }
