@@ -1,6 +1,6 @@
 # Multi-select filter in Swift
 
-<img src="/Screenshots/Cover.png" height="17%">
+<img src="/Screenshots/Cover.png">
 
 The example app that demonstrates how to implement filtering logic using design patterns.
 
